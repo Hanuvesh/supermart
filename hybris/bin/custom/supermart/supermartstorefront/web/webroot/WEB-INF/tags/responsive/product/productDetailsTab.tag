@@ -7,5 +7,6 @@
 		<p>
 			${ycommerce:sanitizeHTML(product.description)}
 		<p>
+	Launch Date: ${product.launchDate}
 	</ycommerce:testId>
 </div>

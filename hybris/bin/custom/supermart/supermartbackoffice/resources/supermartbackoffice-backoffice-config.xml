@@ -24,4 +24,14 @@
 	   </na:notification-area>
 	</context>
 
+	<context merge-by="type" parent="VariantProduct" type="ElectronicsColorVariantProduct" component="editor-area">
+		<ea:editorArea name="">
+			<ea:tab name="hmc.tab.product.customattributes">
+				<ea:customSection name="hmc.section.properties">
+					<ea:attribute qualifier="launchDate"/>
+				</ea:customSection>
+			</ea:tab>
+		</ea:editorArea>
+	</context>
+
 </config>

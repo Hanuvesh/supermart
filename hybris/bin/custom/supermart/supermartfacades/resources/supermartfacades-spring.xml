@@ -183,4 +183,13 @@
 
 	<bean id="genderData" class="com.supermart.facades.product.data.GenderData" scope="prototype"/>
 
+	<bean id="electronicsProductPopulator" class="com.supermart.facades.populators.ElectronicsProductPopulator" >
+	</bean>
+
+	<!-- Add the electronicsProductPopulator to the productConverter -->
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="productConverter"/>
+		<property name="add" ref="electronicsProductPopulator"/>
+	</bean>
+
 </beans>
