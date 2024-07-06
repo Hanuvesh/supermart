@@ -16,7 +16,7 @@
 </c:choose>
 
 <c:set var="qtyMinus" value="1" />
-
+<c:if test="${empty isAddToCartEnabled ? true : isAddToCartEnabled}">
 <div class="addtocart-component">
 		<c:if test="${empty showAddToCart ? true : showAddToCart}">
 		<div class="qty-selector input-group js-qty-selector">
@@ -58,3 +58,5 @@
         <action:actions element="div"  parentComponent="${component}"/>
     </div>
 </div>
+</c:if>
+

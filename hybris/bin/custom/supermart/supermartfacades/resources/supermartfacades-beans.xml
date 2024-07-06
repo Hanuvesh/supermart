@@ -6,7 +6,7 @@
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="genders" type="java.util.List&lt;com.supermart.facades.product.data.GenderData>"/>
-		<property name="launchDate" type="java.lang.String" />
+		<property name="launchDate" type="java.util.Date" />
 	</bean>
 
 	<bean class="com.supermart.facades.product.data.GenderData">

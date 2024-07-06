@@ -31,7 +31,7 @@ public class ElectronicsProductPopulator implements Populator<ProductModel, Prod
 		if (source instanceof ElectronicsColorVariantProductModel) {
 			final ElectronicsColorVariantProductModel variant = (ElectronicsColorVariantProductModel) source;
 			if (variant.getLaunchDate() != null) {
-				target.setLaunchDate(variant.getLaunchDate().toString());
+				target.setLaunchDate(variant.getLaunchDate());
 			}
 		}
 	}

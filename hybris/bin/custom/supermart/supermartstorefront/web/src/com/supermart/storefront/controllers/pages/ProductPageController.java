@@ -36,13 +36,7 @@ import de.hybris.platform.util.Config;
 import com.supermart.storefront.controllers.ControllerConstants;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -140,11 +134,16 @@ public class ProductPageController extends AbstractPageController
 		model.addAttribute(new ReviewForm());
 		model.addAttribute("pageType", PageType.PRODUCT.name());
 		model.addAttribute("futureStockEnabled", isFutureStockEnabledForCurrentUser());
+		model.addAttribute("isAddToCartEnabled", isAddToCartEnabled(productData));
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(productData.getKeywords());
 		final String metaDescription = MetaSanitizerUtil.sanitizeDescription(productData.getDescription());
 		setUpMetaData(model, metaKeywords, metaDescription);
 		return getViewForPage(model);
+	}
+
+	private boolean isAddToCartEnabled (final ProductData productData) {
+		return productData.getLaunchDate() != null ? productData.getLaunchDate().before(new Date()) : true;
 	}
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN + "/orderForm", method = RequestMethod.GET)
