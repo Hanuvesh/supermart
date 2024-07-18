@@ -538,4 +538,25 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+
+<!-- Prepare interceptors -->
+	<bean id="supermartProductInterceptor" class="com.supermart.core.interceptors.SupermartProductInterceptor">
+	</bean>
+
+	<bean id="supermartProductInterceptorMapping"
+		  class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="supermartProductInterceptor"/>
+		<property name="typeCode" value="ElectronicsColorVariantProduct"/>
+	</bean>
+
+
+	<!-- Validation interceptors -->
+	<bean id="SupermartProductValidationInterceptor" class="com.supermart.core.interceptors.SupermartProductValidationInterceptor">
+	</bean>
+
+	<bean id="SupermartProductValidationInterceptorMapping"
+		  class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="SupermartProductValidationInterceptor"/>
+		<property name="typeCode" value="ElectronicsColorVariantProduct"/>
+	</bean>
 </beans>
