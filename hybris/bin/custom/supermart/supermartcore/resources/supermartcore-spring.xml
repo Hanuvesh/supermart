@@ -559,4 +559,25 @@
 		<property name="interceptor" ref="SupermartProductValidationInterceptor"/>
 		<property name="typeCode" value="ElectronicsColorVariantProduct"/>
 	</bean>
+
+
+
+	<!--Bean for cronjob practice-->
+
+	<bean id="productListJobPerformable" class="com.supermart.core.job.ProductListJobPerformable" parent="abstractJobPerformable">
+		<property name="supermartProductDao" ref="supermartProductDao"/>
+	</bean>
+
+	<alias name="supermartProductDao" alias="productDao"/>
+	<bean id="supermartProductDao" class="com.supermart.core.daos.impl.SupermartProductDaoImpl" parent="defaultProductDao" />
+
+
+	<bean id="customerLevelAdjustmentJob"
+		  class="com.supermart.core.job.CustomerLevelAdjustmentJob"
+		  parent="abstractJobPerformable">
+		<property name="supermartCustomerDao" ref="supermartCustomerDao" />
+	</bean>
+
+	<alias name="supermartCustomerDao" alias="customerDao"/>
+	<bean id="supermartCustomerDao" class="com.supermart.core.daos.impl.SupermartCustomerDaoImpl" parent="defaultCustomerDao" />
 </beans>

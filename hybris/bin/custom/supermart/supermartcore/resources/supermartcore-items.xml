@@ -25,6 +25,13 @@
             <value code="WHITE"/>
             <value code="YELLOW"/>
         </enumtype>
+
+        <enumtype code="CustomerLevel" autocreate="true" generate="true">
+            <value code="SILVER"/>
+            <value code="GOLD"/>
+            <value code="PLATINUM"/>
+        </enumtype>
+
     </enumtypes>
 
     <itemtypes>
@@ -108,6 +115,18 @@
             </itemtype>
         </typegroup>
 
+
+
+        <typegroup name="Supermart">
+        <itemtype code="Customer" autocreate="false" generate="false">
+            <attributes>
+                <attribute qualifier="level" type="CustomerLevel">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="true" search="true" optional="true"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+    </typegroup>
 
     </itemtypes>
 </items>

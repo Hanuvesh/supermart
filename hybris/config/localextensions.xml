@@ -1,12 +1,7 @@
 <hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
   <extensions>
     <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
-    <extension name='adaptivesearch' />
-    <extension name='adaptivesearchbackoffice' />
-    <extension name='adaptivesearchfacades' />
-    <extension name='adaptivesearchsamplesaddon' />
-    <extension name='adaptivesearchsolr' />
-    <extension name='adaptivesearchwebservices' />
+
     <extension name='apiregistrybackoffice' />
     <extension name='apiregistryservices' />
    
@@ -147,7 +142,35 @@
     <extension name='swaggerintegration' />
     <extension name='webservicescommons' />
     <extension name='ywebservices' />
-	<!--  
+
+
+    <extension name='warehousing' />
+
+
+	<!--
+	<extension name='notificationaddon' />
+    <extension name='notificationfacades' />
+    <extension name='notificationocc' />
+    <extension name='notificationservices' />
+    <extension name='ordermanagementaddon' />
+    <extension name='ordermanagementfacades' />
+    <extension name='ordermanagementwebservices' />
+    <extension name='orderselfserviceaddon' />
+     <extension name='stocknotificationaddon' />
+    <extension name='stocknotificationfacades' />
+    <extension name='stocknotificationservices' />
+      <extension name='warehousingbackoffice' />
+    <extension name='warehousingfacades' />
+    <extension name='warehousingwebservices' />
+
+    <extension name='adaptivesearch' />
+    <extension name='adaptivesearchbackoffice' />
+    <extension name='adaptivesearchfacades' />
+    <extension name='adaptivesearchsamplesaddon' />
+    <extension name='adaptivesearchsolr' />
+    <extension name='adaptivesearchwebservices' />
+
+
 	<extension name='consignmenttrackingaddon' />
     <extension name='consignmenttrackingbackoffice' />
     <extension name='consignmenttrackingfacades' />
@@ -167,21 +190,7 @@
     <extension name='messagecentercsfacades' />
     <extension name='messagecentercsocc' />
     <extension name='messagecentercsservices' />
-    <extension name='notificationaddon' />
-    <extension name='notificationfacades' />
-    <extension name='notificationocc' />
-    <extension name='notificationservices' />
-	<extension name='ordermanagementaddon' />
-    <extension name='ordermanagementfacades' />
-    <extension name='ordermanagementwebservices' />
-    <extension name='orderselfserviceaddon' />
-    <extension name='warehousing' />
-    <extension name='warehousingbackoffice' />
-    <extension name='warehousingfacades' />
-    <extension name='warehousingwebservices' />
-	<extension name='stocknotificationaddon' />
-    <extension name='stocknotificationfacades' />
-    <extension name='stocknotificationservices' />
+
     
     <extension name='textfieldconfiguratortemplateaddon' />
     <extension name='textfieldconfiguratortemplatebackoffice' />
