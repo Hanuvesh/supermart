@@ -116,8 +116,7 @@
         </typegroup>
 
 
-
-        <typegroup name="Supermart">
+    <typegroup name="Supermart">
         <itemtype code="Customer" autocreate="false" generate="false">
             <attributes>
                 <attribute qualifier="level" type="CustomerLevel">
@@ -126,6 +125,16 @@
                 </attribute>
             </attributes>
         </itemtype>
+        <itemtype code="Product" autocreate="false" generate="false">
+            <attributes>
+                <attribute qualifier="totalOrders" type="java.lang.Integer">
+                    <persistence type="dynamic" attributeHandler="totalOrdersForProductHandler"/>
+                    <modifiers read="true" write="false"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
+
     </typegroup>
 
     </itemtypes>

@@ -580,4 +580,11 @@
 
 	<alias name="supermartCustomerDao" alias="customerDao"/>
 	<bean id="supermartCustomerDao" class="com.supermart.core.daos.impl.SupermartCustomerDaoImpl" parent="defaultCustomerDao" />
+
+    <bean id="totalOrdersForProductHandler" class="com.supermart.core.attributehandlers.TotalOrdersForProductHandler">
+		<property name="supermartOrderDao" ref="supermartOrderDao" />
+	</bean>
+
+	<alias name="supermartOrderDao" alias="orderDao"/>
+	<bean id="supermartOrderDao" class="com.supermart.core.daos.impl.SupermartOrderDaoImpl" parent="defaultOrderDao" />
 </beans>
