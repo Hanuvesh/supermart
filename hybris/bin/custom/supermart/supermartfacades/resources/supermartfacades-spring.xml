@@ -192,4 +192,7 @@
 		<property name="add" ref="electronicsProductPopulator"/>
 	</bean>
 
+	<alias name="defaultSupermartCustomerFacade" alias="customerFacade" />
+	<bean id="defaultSupermartCustomerFacade" class="com.supermart.facades.customer.impl.DefaultSupermartCustomerFacade" parent="defaultCustomerFacade">
+	</bean>
 </beans>

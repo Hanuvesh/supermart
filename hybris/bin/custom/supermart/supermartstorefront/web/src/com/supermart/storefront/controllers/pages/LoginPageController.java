@@ -3,7 +3,16 @@
  */
 package com.supermart.storefront.controllers.pages;
 
+
+import com.supermart.storefront.forms.SupermartRegisterForm;
+import com.supermart.storefront.validators.SupermartRegistrationValidator;
+import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.Breadcrumb;
+import de.hybris.platform.acceleratorstorefrontcommons.constants.WebConstants;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.ThirdPartyConstants;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractLoginPageController;
+import de.hybris.platform.acceleratorstorefrontcommons.controllers.util.GlobalMessages;
+import de.hybris.platform.acceleratorstorefrontcommons.forms.GuestForm;
+import de.hybris.platform.acceleratorstorefrontcommons.forms.LoginForm;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
@@ -20,11 +29,14 @@ import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Collections;
 
 
 /**
@@ -32,9 +44,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  */
 @Controller
 @RequestMapping(value = "/login")
-public class LoginPageController extends AbstractLoginPageController
+public class LoginPageController extends SupermartAbstractLoginPageController
 {
 	private HttpSessionRequestCache httpSessionRequestCache;
+
+
 
 	@Override
 	protected String getView()
@@ -88,7 +102,7 @@ public class LoginPageController extends AbstractLoginPageController
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String doRegister(@RequestHeader(value = "referer", required = false) final String referer, final RegisterForm form,
+	public String doRegister(@RequestHeader(value = "referer", required = false) final String referer, final SupermartRegisterForm form,
 			final BindingResult bindingResult, final Model model, final HttpServletRequest request,
 			final HttpServletResponse response, final RedirectAttributes redirectModel) throws CMSItemNotFoundException
 	{
@@ -104,4 +118,5 @@ public class LoginPageController extends AbstractLoginPageController
 		setUpMetaDataForContentPage(model, pageForRequest);
 		return ControllerConstants.Views.Fragments.Checkout.TermsAndConditionsPopup;
 	}
+
 }

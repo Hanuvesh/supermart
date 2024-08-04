@@ -3,6 +3,7 @@
  */
 package com.supermart.storefront.controllers.pages;
 
+import com.supermart.storefront.forms.SupermartRegisterForm;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.pages.AbstractRegisterPageController;
 import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
@@ -27,7 +28,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  */
 @Controller
 @RequestMapping(value = "/register")
-public class RegisterPageController extends AbstractRegisterPageController
+public class RegisterPageController extends SupermartAbstractRegisterPageController
 {
 	private HttpSessionRequestCache httpSessionRequestCache;
 
@@ -66,8 +67,8 @@ public class RegisterPageController extends AbstractRegisterPageController
 	}
 
 	@RequestMapping(value = "/newcustomer", method = RequestMethod.POST)
-	public String doRegister(final RegisterForm form, final BindingResult bindingResult, final Model model,
-			final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel)
+	public String doRegister(final SupermartRegisterForm form, final BindingResult bindingResult, final Model model,
+							 final HttpServletRequest request, final HttpServletResponse response, final RedirectAttributes redirectModel)
 			throws CMSItemNotFoundException
 	{
 		getRegistrationValidator().validate(form, bindingResult);

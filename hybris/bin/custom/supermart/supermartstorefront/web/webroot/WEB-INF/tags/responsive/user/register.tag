@@ -34,6 +34,9 @@
 	<formElement:formInputBox idKey="register.email"
 		labelKey="register.email" path="email" inputCSS="form-control"
 		mandatory="true" />
+    <formElement:formInputBox idKey="register.aadharNumber"
+         labelKey="register.aadharNumber" path="aadharNumber" inputCSS="form-control"
+         mandatory="true" />
 	<formElement:formPasswordBox idKey="password" labelKey="register.pwd"
 		path="pwd" inputCSS="form-control password-strength" mandatory="true" />
 	<formElement:formPasswordBox idKey="register.checkPwd"
