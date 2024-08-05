@@ -73,6 +73,7 @@ public abstract class SupermartAbstractRegisterPageController extends AbstractRe
         data.setLastName(form.getLastName());
         data.setLogin(form.getEmail());
         data.setAadharNumber(form.getAadharNumber());
+        data.setMobileNumber(form.getMobileNumber());
         data.setPassword(form.getPwd());
         data.setTitleCode(form.getTitleCode());
         try

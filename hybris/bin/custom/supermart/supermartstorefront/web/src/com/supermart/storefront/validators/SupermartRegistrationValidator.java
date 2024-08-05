@@ -13,8 +13,10 @@ public class SupermartRegistrationValidator extends RegistrationValidator
     {
         final SupermartRegisterForm registerForm = (SupermartRegisterForm) object;
         final String aadharNumber = registerForm.getAadharNumber();
+        final String mobileNumber = registerForm.getMobileNumber();
 
         validateAadharNumber(errors, aadharNumber);
+        validateMobileNumber(errors, mobileNumber);
     }
 
     protected void validateAadharNumber(final Errors errors, final String aadharNumber)
@@ -23,6 +25,15 @@ public class SupermartRegistrationValidator extends RegistrationValidator
                 !aadharNumber.chars().allMatch(Character::isDigit))
         {
             errors.rejectValue("aadharNumber", "register.aadharNumber.invalid");
+        }
+    }
+
+    protected void validateMobileNumber(final Errors errors, final String mobileNumber)
+    {
+        if (StringUtils.isEmpty(mobileNumber) || StringUtils.length(mobileNumber) != 10 ||
+                !mobileNumber.chars().allMatch(Character::isDigit))
+        {
+            errors.rejectValue("mobileNumber", "register.mobileNumber.invalid");
         }
     }
 

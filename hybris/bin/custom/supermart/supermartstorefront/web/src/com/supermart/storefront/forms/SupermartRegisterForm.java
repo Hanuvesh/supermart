@@ -4,8 +4,8 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.RegisterForm;
 
 public class SupermartRegisterForm extends RegisterForm
 {
-
     private String aadharNumber;
+    private String mobileNumber;
 
     public String getAadharNumber()
     {
@@ -17,4 +17,13 @@ public class SupermartRegisterForm extends RegisterForm
         this.aadharNumber = aadharNumber;
     }
 
+    public String getMobileNumber()
+    {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber)
+    {
+        this.mobileNumber = mobileNumber;
+    }
 }

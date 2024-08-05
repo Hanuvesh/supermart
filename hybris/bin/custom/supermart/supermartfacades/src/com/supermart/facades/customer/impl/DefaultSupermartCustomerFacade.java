@@ -11,6 +11,7 @@ public class DefaultSupermartCustomerFacade extends DefaultCustomerFacade implem
     protected void setCommonPropertiesForRegister(final RegisterData registerData, final CustomerModel customerModel)
     {
         customerModel.setAadharNumber(registerData.getAadharNumber());
+        customerModel.setMobileNumber(registerData.getMobileNumber());
         super.setCommonPropertiesForRegister(registerData, customerModel);
     }
 }

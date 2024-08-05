@@ -15,7 +15,8 @@
 	</bean>
 
 	<bean class="de.hybris.platform.commercefacades.user.data.RegisterData">
-<property name="aadharNumber" type="String"/>
+		<property name="aadharNumber" type="String"/>
+		<property name="mobileNumber" type="String"/>
 	</bean>
 
 </beans>
